@@ -3,4 +3,4 @@ from bottle import Bottle
 
 app = Bottle()
 
-from app_project.controllers import *
+from application.controllers import *

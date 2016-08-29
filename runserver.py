@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 from bottle import debug, run
 import os
-from app_project import app
+from application import app
    
 debug(True)
 if __name__ == '__main__':

@@ -3,8 +3,8 @@ Created on 26 de ago de 2016
 
 @author: Alan James
 '''
-from api_watson.api_watson_nlc import APIWatson
 import json
+from application.api_watson.api_watson_nlc import APIWatson
 
 class TextBO(object):
     '''

@@ -7,8 +7,8 @@ import json
 
 from bottle import request
 
-from app_project import app
-from app_project.bo.text_bo import TextBO
+from application import app
+from application.bo.text_bo import TextBO
 
 
 __prefix__ = "/app"
