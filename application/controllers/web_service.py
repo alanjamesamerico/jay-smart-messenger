@@ -19,7 +19,7 @@ def index():
 
 @app.post(__prefix__ + '/process/text')
 def get_classify():
-    response = text.process_text( request.json['text'])
+    response = text.process_text( request.json)
     return json.dumps(response, indent=2)
 
 

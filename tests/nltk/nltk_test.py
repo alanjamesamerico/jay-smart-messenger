@@ -24,7 +24,7 @@ sents_florest   = floresta.tagged_sents()
 sents_mm        = mac_morpho.tagged_sents() # doctest: +NORMALIZE_WHITESPACE
 
 stop_word = stopwords.words('portuguese')
-#print (stop_word[:15])
+print (stop_word[:100])
 
 def remove_accents(txt):
     return normalize('NFKD', txt).encode('ASCII','ignore').decode('ASCII')
