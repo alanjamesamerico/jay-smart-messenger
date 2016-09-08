@@ -12,9 +12,7 @@ class APIWatson(object):
     def __init__ (self):
         __user__ = "e5cdffc6-5f9a-47ff-bb7b-005b08c071a4"
         __pass__ = "FfbYlWjZVLwT"
-        self.c_id = "340008x87-nlc-2365"
         self.auth = NaturalLanguageClassifierV1(username = __user__, password = __pass__)
-        #self.auth = auth
             
     def getAuthentication (self):
         return self.auth
