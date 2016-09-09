@@ -24,7 +24,7 @@ sents_florest   = floresta.tagged_sents()
 sents_mm        = mac_morpho.tagged_sents() # doctest: +NORMALIZE_WHITESPACE
 
 stop_word = stopwords.words('portuguese')
-print (stop_word[:100])
+#print (stop_word)
 
 def remove_accents(txt):
     return normalize('NFKD', txt).encode('ASCII','ignore').decode('ASCII')
@@ -153,81 +153,55 @@ def get_total_words_mac_morpho():
 def get_total_words_florest():
     return "Total de palavras - Floresta: " + str(len(words_florest))
 
+def words_for_file_txt():
+    words = []
+    for word in words_florest:
+        _word = remove_accents(word).lower() 
+        if _word not in words:
+            words.append(_word)
+        else:
+            pass
+    words.sort()
+    archive = open ('C:\\Users\\alan.james\\Desktop\\wordsFlorest.txt', 'w')
+    for w in words:
+        archive.write(w + '\n')
+    archive.close
+    print ('fim')
+
+def read_file():
+    archive = open ('C:\\Users\\alan.james\\Desktop\\wordsMM-2.txt', 'r')
+    content = set(archive)
+    print (content)
     
+    l = []
+    for i in content:
+        l.append(i.replace("\n", ""))
+    
+    print (l)
+    
+    l.sort()
+    lista = set(l)
+    print ("set: ", lista)
+    archive.close
+    
+
+def tags():
+    print ("Florest: \n")
+    for tag in tags_florest[:20]:
+        print (tag)
+    print ("\nMM: \n")
+    for tag in tags_mm[:20]:
+        print (tag)
+    
+
+#tags()
 #print (get_total_words_florest())
 #print (get_total_words_mac_morpho())
 #print (show_words_sents_corpus())
 #print (total_words_by_class_gramatical())
-print (words_for_json())
+#print (words_for_json())
+#words_for_file_txt()
+read_file()
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-        if (_gramatical == "ADJ"):
-            pass
-        elif (_gramatical == "ADV"):
-            pass
-        elif (_gramatical == "ADV-KS"):
-            pass
-        elif (_gramatical == "ADV-KS-REL"):
-            pass
-        elif (_gramatical == "ART"):
-            pass
-        elif (_gramatical == "KC"):
-            pass
-        elif (_gramatical == "IN"):
-            pass
-        elif (_gramatical == "N"):
-            pass
-        elif (_gramatical == "NPROP"):
-            pass
-        elif (_gramatical == "NUM"):
-            pass
-        elif (_gramatical == "PCP"):
-            pass
-        elif (_gramatical == "PDEN"):
-            pass
-        elif (_gramatical == "PREP"):
-            pass
-        elif (_gramatical == "PROADJ"):
-            pass
-        elif (_gramatical == "PRO-KS"):
-            pass
-        elif (_gramatical == "PROPESS"):
-            pass
-        elif (_gramatical == "PRO-KS-REL"):
-            pass
-        elif (_gramatical == "PROSUB"):
-            pass
-        elif (_gramatical == "V"):
-            pass
-        elif (_gramatical == "VAUX"):
-            pass
-        elif (_gramatical == "CUR"):
-            pass
-        '''
