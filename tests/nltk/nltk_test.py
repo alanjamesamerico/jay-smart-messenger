@@ -8,6 +8,7 @@ Estudar
 http://web.mit.edu/6.863/spring2011/packages/nltk-0.9.7/nltk/test/portuguese_en.doctest
 '''
 import json
+import nltk
 from unicodedata import normalize
 
 from nltk.corpus import floresta
@@ -185,23 +186,21 @@ def read_file():
     archive.close
     
 
-def tags():
-    print ("Florest: \n")
-    for tag in tags_florest[:20]:
-        print (tag)
-    print ("\nMM: \n")
-    for tag in tags_mm[:20]:
-        print (tag)
-    
+def tags(text):
+    for tag in tags_florest[:]:
+        #if text in tag:
+        if 'P+v-inf' in tag:
+            print (tag)
 
-#tags()
+
+text = 'maçã'
+tags(text)
 #print (get_total_words_florest())
 #print (get_total_words_mac_morpho())
 #print (show_words_sents_corpus())
 #print (total_words_by_class_gramatical())
 #print (words_for_json())
 #words_for_file_txt()
-read_file()
-
+#read_file()
 
 

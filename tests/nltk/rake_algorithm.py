@@ -27,7 +27,6 @@ keywords = rake_object.run(text)
 
 # 3. print results
 print("Keywords:", keywords)
-
 print("----------")
 
 
