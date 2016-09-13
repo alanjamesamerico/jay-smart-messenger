@@ -109,7 +109,6 @@ def check_class_grammatical(text):
             if word in tag:
                 text_tags.append(tag)
                 break
-    print ('\nClass Gramm: ', text_tags)
     return text_tags
 
 def parsing_class_grammatical(text_tags):
@@ -162,10 +161,10 @@ def test():
   print ("\n", text15, "\n", rake.extract(text15, incl_scores=True))
 
 # Simple case.
-def test_extract_parsing_1():
+def test_extract_parsing_1(text1):
   rake = RakeKeywordExtractor()
   
-  text1 = 'Quero comer'
+  #text1 = 'Onde eu poderia almoçar? tem algum restaurante aqui por perto?'
   print (rake.extract(text1, incl_scores=True), "\n")
   
   list_words = rake.extract(text1, incl_scores=True)
@@ -178,24 +177,24 @@ def test_extract_parsing_1():
        wt = parsing_class_grammatical(phrase_class)
        print ('\nPalavra(as) extraída(as): ', wt)
        
-def test_extract_parsing_2():
+def test_extract_parsing_2(text1):
   rake = RakeKeywordExtractor()
   language = 'portuguese'
-  text1 = 'O Alan comeu uma maçã'
+  #text1 = 'Onde eu poderia almoçar? tem algum restaurante aqui por perto?'
   print (rake.extract(text1, incl_scores=True), "\n")
   
   list_words = rake.extract(text1, incl_scores=True)
   words_tags = []
   
   for tuple in list_words:
-      if len(nltk.word_tokenize(tuple[0], language)) > 1:
-          
-          # Simple Case.
-          phrase = list_words[0][0]
+      if len(nltk.word_tokenize(tuple[0], language)) == 2:
+          phrase = tuple[0]
           print ('Frase: ', phrase)
           phrase_class = check_class_grammatical(phrase)
           wt = parsing_class_grammatical(phrase_class)
-          print ('\nPalavra(as) extraída(as): ', wt)
+          for w in wt:
+              words_tags.append(w)
+  return words_tags
 
 def test_whith_stemmers():
   rake = RakeKeywordExtractor()
@@ -205,20 +204,12 @@ def test_whith_stemmers():
   print (rake.extract(text1, incl_scores=True), "\n")
   
   list_words = rake.extract(text1, incl_scores=True)
-  words_tags = []
-  if len(list_words) == 1:
-       phrase = list_words[0][0]
-       print ('Frase: ', phrase)
-       phrase_class = check_class_grammatical(phrase)
-       wt = parsing_class_grammatical(phrase_class)
-       print ('\nPalavra extraída: ', wt)
-       
-       for w in wt:
-           print (w[0], '\ts/ Morfologia: ', stemmer.stem(w[0]))
-           print (w[0], '\ts/ Morfologia: ', stemmer.stem(w[0]))
-  
+  words_tags = test_extract_parsing_2(text1)
+  for w in words_tags:
+     print (w[0], '\ts/ Morfologia: ', stemmer.stem(w[0]))
+
 if __name__ == "__main__":
     
-  #test()
-  test_extract_parsing_1()
+  test()
+  #print (test_extract_parsing_2(""))
   #test_whith_stemmers()
