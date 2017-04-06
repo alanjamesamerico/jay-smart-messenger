@@ -1,0 +1,161 @@
+/* MESSAGE Example */
+{
+    "_id" : ObjectId("570579185ab6ea75fe1f3e86"),
+    "dtSent" : ISODate("2016-04-06T21:01:06.000Z"),
+    "dtQueue" : null,
+    "content" : "Oi",
+    "idUser" : null,
+    "toRead" : [],
+    "created" : ISODate("2016-04-06T21:01:12.728Z"),
+    "dtDelivered" : ISODate("2016-04-06T21:01:12.000Z"),
+    "isBroadcast" : false,
+    "toRejectedCount" : 0,
+    "toReadCount" : 0,
+    "isAuto" : false,
+    "from" : ObjectId("570579105ab6ea75fe1f3e7b"),
+    "toDeliveredCount" : 1,
+    "distLists" : [],
+    "dtRejected" : null,
+    "idChatSession" : null,
+    "toCount" : 1,
+    "caption" : null,
+    "fgCleanMsgWaiting" : false,
+    "fgSendToBlocked" : false,
+    "idCampaign" : ObjectId("56dc3d63e4b0d350c0e89fe1"),
+    "toSentCount" : 0,
+    "toDelivered" : [ 
+        ObjectId("570579105ab6ea75fe1f3e7b")
+    ],
+    "direction" : "R",
+    "dtRead" : null,
+    "idTrigger" : null,
+    "imNetworks" : [ 
+        "WHA"
+    ],
+    "to" : [ 
+        ObjectId("56dc3d63e4b0d350c0e89fe1")
+    ],
+    "toSent" : [],
+    "toRejected" : [],
+    "mediaType" : "TXT",
+    "status" : "DLV",
+    "updated" : ISODate("2016-04-06T21:01:13.617Z")
+}
+
+
+/* CAMPAIN - Boinito Turista */
+{
+    "_id" : ObjectId("56dc3d63e4b0d350c0e89fe1"),
+    "idCustomer" : ObjectId("56dc3a76e4b0d350c0e89fd7"),
+    "name" : "Bonito - Turista - 67-8469-8932",
+    "nickName" : "Bonito - Turista",
+    "status" : "ACT",
+    "avatarImage" : null,
+    "created" : ISODate("2016-03-06T14:23:31.048Z"),
+    "updated" : ISODate("2016-04-14T17:58:29.958Z"),
+    "defaulLang" : "PT",
+    "description" : "Prefeitura de Bonito - MS | Canal de atendimento ao Turista",
+    "nickStatus" : "Prefeitura de Bonito - MS | Canal de atendimento ao Turista",
+    "idUsers" : {
+        "570fd939e1444d5cf351745c" : "CRD"
+    },
+    "whatsApp" : {
+        "waCampaignType" : "UKN",
+        "idWaChannels" : []
+    }
+}
+
+
+/* HASHTAGS - Bonito Turista*/
+/* 1 */
+{
+    "_id" : ObjectId("570f4ad2e1444d38ec1e0d62"),
+    "allowOnFirstMessage" : false,
+    "delay" : null,
+    "mediaType" : "IMG",
+    "created" : ISODate("2016-04-14T09:30:28.658Z"),
+    "updated" : ISODate("2016-04-14T09:30:28.658Z"),
+    "idIMChannel" : null,
+    "IMNetwork" : "ALL",
+    "status" : "ACT",
+    "parentTag" : null,
+    "tags" : [ 
+        "#ComoChegar", 
+        "#HowToGetThere"
+    ],
+    "contents" : [ 
+        {
+            "caption" : "{{name}}, pra ir até Bonito é possível chegar de carro, ônibus, van ou avião. Acesse o site e saiba mais: http://www.turismo.bonito.ms.gov.br/bonito/como-chegar",
+            "language" : "PT",
+            "content" : "48d6178408f3ac7d4c9c728c7003f0499533f1620b9e6f7bb4d153b36a42cf70"
+        }, 
+        {
+            "language" : "EN",
+            "content" : "be87bb75c222e4db6e8313a777a71c16e067d63db0f3c82977eaab3360575610",
+            "caption" : "{{name}}, it is possible to arrive by car, bus, van or airplane. Access the website and know more. http://www.turismo.bonito.ms.gov.br/bonito/como-chegar"
+        }
+    ],
+    "idCampaign" : ObjectId("56dc3d63e4b0d350c0e89fe1")
+}
+
+/* 2 */
+{
+    "_id" : ObjectId("570f4b93e1444d3a53346888"),
+    "status" : "ACT",
+    "contents" : [ 
+        {
+            "language" : "PT",
+            "content" : "cacd18358d38bf1929fe975cc34237e8d4d9159ecf0a6657a05daa28ad6b5536",
+            "caption" : "{{name}}, este menu apresenta algumas opções que serão úteis a você. Para saber mais sobre o tópico desejado, digite o assunto e iremos te mostrar mais informações. Você também poderá entrar em contato com nossas atendentes em um chat. O atendimento é das 7h às 17h, de segunda a sexta-feira. Vamos lá?\r\n\r\nPara alterar o idioma enviar:\r\nidioma [código idioma]\r\n\r\nIdiomas disponíveis:\r\nPT -> Português\r\nEN -> Inglês"
+        }, 
+        {
+            "content" : "b496a68a8ac71de28bc92ba265244c04a9425524a22b0f0a858093515f210eda",
+            "caption" : "{{name}}, this menu shows some options that will be useful for you. To know more about the topic, type the issue and we will give you more information. You can also contact our attendants via chat. The customer service time is from 7am to 5pm, monday to friday. Lets go?\r\n\r\nTo change the language send:\r\nlanguage [code Language]\r\n\r\nAvailable languages\r\nPT -> Portuguese\r\nEN -> English",
+            "language" : "EN"
+        }
+    ],
+    "created" : ISODate("2016-04-14T13:31:22.532Z"),
+    "idCampaign" : ObjectId("56dc3d63e4b0d350c0e89fe1"),
+    "IMNetwork" : "ALL",
+    "tags" : [ 
+        "#SaibaMais", 
+        "#KnowMore"
+    ],
+    "delay" : null,
+    "mediaType" : "IMG",
+    "updated" : ISODate("2016-04-14T13:31:22.532Z"),
+    "idIMChannel" : null,
+    "allowOnFirstMessage" : false,
+    "parentTag" : null
+}
+
+/* 3 */
+{
+    "_id" : ObjectId("570f4cf8e1444d3bf6fde482"),
+    "delay" : null,
+    "updated" : ISODate("2016-04-14T09:33:09.793Z"),
+    "idCampaign" : ObjectId("56dc3d63e4b0d350c0e89fe1"),
+    "IMNetwork" : "ALL",
+    "status" : "ACT",
+    "allowOnFirstMessage" : false,
+    "parentTag" : null,
+    "idIMChannel" : null,
+    "tags" : [ 
+        "#ServicoAoTurista", 
+        "#TouristInformation"
+    ],
+    "mediaType" : "IMG",
+    "contents" : [ 
+        {
+            "caption" : "{{name}}, vencedor de prêmios internacionais e nacionais, Bonito é mundialmente conhecido e para que todos possam ter uma estadia agradável estamos aqui para te servir. Qualquer dúvida entre em contato conosco. \r\n",
+            "language" : "PT",
+            "content" : "fddeacd0025a918cc6701735f33e63438f1319ba28216dab3d0bb68534cabebe"
+        }, 
+        {
+            "language" : "EN",
+            "content" : "99a51c31a0248827b7c0367e9eab4743117abc6a715682222fab72eb81172c4d",
+            "caption" : "{{name}}, besides winning international and national prizes, Bonito is recognized worldwide and to enable you a pleasant stay we are here to help."
+        }
+    ],
+    "created" : ISODate("2016-04-14T09:33:09.793Z")
+}

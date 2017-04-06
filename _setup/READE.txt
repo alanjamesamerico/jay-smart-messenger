@@ -1,9 +1,0 @@
-Adicionar as pastar .zip em um desses caminhos:
-
-    - 'C:\\Users\\{{usuario.maquina}}/nltk_data' # {{usuario.maquina}} = alan.james (exemplo)
-    - 'C:\\nltk_data'
-    - 'D:\\nltk_data'
-    - 'E:\\nltk_data'
-    - 'C:\\Python35\\nltk_data'
-    - 'C:\\Python35\\lib\\nltk_data'
-    - 'C:\\Users\\{{usuario.maquina}}\\AppData\\Roaming\\nltk_data'
