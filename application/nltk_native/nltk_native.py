@@ -20,9 +20,9 @@ from nltk.stem.rslp import RSLPStemmer
 from _operator import itemgetter
 
 
-_TEXT = "quero muito nadar hoje"
-_FILECSV = "C:\\Users\\Alan James\\Documents\\Development\\work-space\\bonito-turista-atrativos-train-2.csv"
-_LANGUAGE = 'portuguese'
+_TEXT       = "quero muito nadar hoje"
+_FILECSV    = "C:\\Users\\Alan James\\Documents\\Development\\work-space\\bonito-turista-atrativos-train-2.csv"
+_LANGUAGE   = 'portuguese'
 
 START_TIME = datetime.now().strftime('%H:%M:%S')
 HOUR = int(START_TIME[:2])
@@ -38,7 +38,7 @@ def readFileCSV(filePath):
     return training_set
 
 __FILE_TRAIN = readFileCSV(_FILECSV)
-_ALL_WORDS = set(word.lower() for passage in __FILE_TRAIN for word in word_tokenize(passage[0], language=_LANGUAGE))
+_ALL_WORDS   = set(word.lower() for passage in __FILE_TRAIN for word in word_tokenize(passage[0], language=_LANGUAGE))
 
 def isPunct(word):
     return len(word) == 1 and word in string.punctuation
