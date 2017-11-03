@@ -5,7 +5,6 @@ Created on 1 de nov de 2017
 '''
 import tornado.ioloop
 import tornado.web
-from application.im_bot.telegram_handler import run_bot
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
