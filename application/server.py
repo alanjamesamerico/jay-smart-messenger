@@ -24,15 +24,14 @@ class TelegramBot(RequestHandler):
 URL_PROD = 'https://jay-smart-messenger.herokuapp.com'
 URL_TEST = ''
 
-'''
 application = Application([
     (r"/", MainHandler),
     (r"/start/bot", TelegramBot)
 ])
 
 application.listen(URL_PROD)
-'''
 
+'''
 def server_local():
     applicationTest = Application([
         (r"/", MainHandler),
@@ -43,3 +42,4 @@ def server_local():
     tornado.ioloop.IOLoop.instance().start()
 
 server_local()
+'''
