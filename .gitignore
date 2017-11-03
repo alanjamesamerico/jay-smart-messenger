@@ -3,4 +3,4 @@
 .pydevproject
 runserver.py
 _setup/
-.__pycache__/
+**/__pycache__/**

@@ -3,5 +3,5 @@ from application.im.telegram.telegram_message_handler import TelegramMessageHand
 """
 Started Service Bot
 """
-telegram = TelegramMessageHandler()
-telegram.run_bot()
+#telegram = TelegramMessageHandler()
+#telegram.run_bot()

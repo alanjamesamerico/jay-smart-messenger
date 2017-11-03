@@ -1,9 +1,12 @@
-from tornado.web import RequestHandler
-from tornado.web import Application
+from http.server import HTTPServer
+
 from tornado.ioloop import IOLoop
 from tornado.routing import RuleRouter, Rule, HostMatches, PathMatches
-from http.server import HTTPServer
-#from application.im_bot.telegram_handler import run_bot
+from tornado.web import Application
+from tornado.web import RequestHandler
+
+from application.im.telegram.telegram_message_handler import TelegramMessageHandler
+
 
 class MainHandler(RequestHandler):
     def get(self):
@@ -12,8 +15,9 @@ class MainHandler(RequestHandler):
 class TelegramBot(RequestHandler):    
     def get(self):
         self.write("Start Bot Telegram")
+        telegram_bot = TelegramMessageHandler()
+        #telegram_bot.run_bot()
         #run_bot()
-        #TelegramHandler.run_bot(self)
 
 
 """
@@ -33,9 +37,11 @@ application = Application([
    (r"/start/bot", TelegramBot)
 ])
 
+
 def run_server():
     application.listen(PORT)
     print(MSG_SERVER)
     IOLoop.instance().start()
 
-#run_server()
+if __name__ == '__main__':
+    run_server()
