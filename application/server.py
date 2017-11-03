@@ -3,7 +3,7 @@ Created on 1 de nov de 2017
 
 @author: Alan James
 '''
-import tornado.ioloop
+from tornado.ioloop import IOLoop
 from tornado.web import RequestHandler, Application
 
 from application.im.telegram.telegram_message_handler import TelegramMessageHandler
@@ -30,6 +30,8 @@ application = Application([
 ])
 
 application.listen(URL_PROD)
+IOLoop.instance().start()
+
 
 '''
 def server_local():
