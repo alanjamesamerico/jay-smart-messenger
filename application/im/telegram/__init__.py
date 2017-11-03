@@ -1,4 +1,4 @@
-from application.im_bot.telegram_message_handler import TelegramMessageHandler
+from application.im.telegram.telegram_message_handler import TelegramMessageHandler
 
 """
 Started Service Bot

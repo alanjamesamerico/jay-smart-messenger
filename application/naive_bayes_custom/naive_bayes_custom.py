@@ -48,10 +48,8 @@ class NaiveBayesCustom(object):
     '''
    
     def train(self):
-        
         self._test_set = [({word: (word in pt.applyTokenizer(x[0])) for word in _LEXICON}, x[1]) for x in __TRAIN_SET__]
         #print("> Test Set: ", self._test_set)
-        
         #self._training_set = apply_features(self.extractFeature, self._test_set)
         self._classifier = NaiveBayesClassifier.train(self._test_set)
         #print("> Training Set: ", self._training_set)
