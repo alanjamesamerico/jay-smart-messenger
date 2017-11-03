@@ -18,22 +18,23 @@ training_data = [
 '''
 
 training_data = [
-('Eu amo este sanduíche.', 'Pos'),
-('Meu pai é o melhor', 'Pos'),
-('Pessoas leguais são pessoas boas!', 'Pos'),
-('Este é um lugar incrível!', 'Pos'),
-("Eu me sinto muito bem com essas cervejas.", "Pos"),
+#('Eu amo este sanduíche.', 'Pos'),
+#('Meu pai é o melhor', 'Pos'),
+#('Pessoas leguais são pessoas boas!', 'Pos'),
+#('Este é um lugar incrível!', 'Pos'),
+#("Eu me sinto muito bem com essas cervejas.", "Pos"),
 ('Este é o meu melhor trabalho.', 'Pos'),
-("Que visão fantástica", "pos"),
-('Não como este restaurante', 'neg'),
+("Que visão fantástica", "Pos"),
+('Não como este restaurante', 'Neg'),
 ("Estou cansado dessas coisas.", "Neg"),
 ("Eu não posso lidar com isso", "neg"),
 ("Ele é meu inimigo jurado!", "Neg"),
-("Aquela música é ruim", "Neg"),
-("Não gosto de ouvir você!", "Neg"),
+#("Aquela música é ruim", "Neg"),
+#("Não gosto de ouvir você!", "Neg"),
 ('Meu chefe é horrível.', 'Neg')]
 
-phrase = word_tokenize('I love this sandwich.'.lower())
+#phrase = word_tokenize('I love this sandwich.'.lower())
+phrase = word_tokenize('Eu não gosto disso'.lower())
 print("Sentence Tokenize: %s" %phrase)
 
 vocabulary = set(chain(*[word_tokenize(i[0].lower(), 'portuguese') for i in training_data])) # all words
@@ -41,7 +42,9 @@ x =  {i:True for i in vocabulary if i in phrase}
 y =  {i:False for i in vocabulary if i not in phrase}
 print("\nVOCABYLARY: %s" %vocabulary, "\nVOCABYLARY e PHRASE: %s" %x, "\nVOCABYLARY e não na PHRASE: %s" %y, "\nX update: %s" %x.update(y))
 
-feature_set = [({i:(i in word_tokenize(sentence.lower(), 'portuguese')) for i in vocabulary},tag) for sentence, tag in training_data]
+feature_set = [({i:(i in word_tokenize(sentence.lower(), 'portuguese')) 
+                 for i in vocabulary},tag) 
+               for sentence, tag in training_data]
 #print("\n\nFeature Set: %s" %feature_set)
 
 classifier = nltk.NaiveBayesClassifier.train(feature_set);
