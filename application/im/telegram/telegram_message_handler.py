@@ -10,9 +10,6 @@ import time
 
 class TelegramMessageHandler(object):
     
-    global _TOKEN_
-    _TOKEN_ = ''
-    
     def __init__(self):
         self.updater = Updater('475775136:AAFkVNGakPSCINOHKdE6jv7MKRPZXN5WoQ4') #Token
     

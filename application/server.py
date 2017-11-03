@@ -6,8 +6,6 @@ Created on 1 de nov de 2017
 from tornado.ioloop import IOLoop
 from tornado.web import RequestHandler, Application
 
-from application.im.telegram.telegram_message_handler import TelegramMessageHandler
-
 
 class MainHandler(RequestHandler):
     def get(self):
@@ -16,9 +14,9 @@ class MainHandler(RequestHandler):
 class TelegramBot(RequestHandler):    
     def get(self):
         self.write("Start Bot Telegram")
-        telegram_bot = TelegramMessageHandler()
+        #telegram_bot = TelegramMessageHandler()
         print("\n\tTelegramBot Log...\n")
-        telegram_bot.run_bot()
+        #telegram_bot.run_bot()
         #run_bot()
         
 URL_PROD = 'https://jay-smart-messenger.herokuapp.com'
@@ -31,9 +29,8 @@ application = Application([
 
 application.listen(URL_PROD)
 IOLoop.instance().start()
-
-
 '''
+
 def server_local():
     applicationTest = Application([
         (r"/", MainHandler),
@@ -41,7 +38,7 @@ def server_local():
     ])
     applicationTest.listen(8000, URL_TEST)
     print("Server listening on port 8000 in Localhost...")
-    tornado.ioloop.IOLoop.instance().start()
+    IOLoop.instance().start()
 
 server_local()
 '''
