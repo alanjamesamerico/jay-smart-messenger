@@ -50,10 +50,13 @@ class TelegramMessageHandler(object):
         receive_msg_handler = MessageHandler([Filters.text], self.mess_receive_user)
         self.updater.dispatcher.add_handler(receive_msg_handler)
     
-    def run_bot(self):
+    def start_bot(self):
         self.run_dispatcher()
         self.updater.start_polling()
         print("-----------------------------------------")
         print("|\tService Started on Success   \t|")
         print("-----------------------------------------\n")
         self.updater.idle()
+    
+    def stop_bot(self):
+        self.updater.stop()
