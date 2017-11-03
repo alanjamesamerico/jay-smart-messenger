@@ -7,6 +7,7 @@ import os
 
 from tornado.ioloop import IOLoop
 from tornado.web import RequestHandler, Application
+from application.im.telegram.telegram_message_handler import TelegramMessageHandler
 
 
 class MainHandler(RequestHandler):
@@ -16,10 +17,9 @@ class MainHandler(RequestHandler):
 class TelegramBot(RequestHandler):    
     def get(self):
         self.write("Start Bot Telegram")
-        #telegram_bot = TelegramMessageHandler()
-        print("\n\tTelegramBot Log...\n")
-        #telegram_bot.run_bot()
-        #run_bot()
+        telegram_bot = TelegramMessageHandler()
+        print("\n\t[LOG] - TelegramBot Started...\n")
+        telegram_bot.run_bot()
         
 URL_PROD = 'https://jay-smart-messenger.herokuapp.com'
 URL_TEST = ''
