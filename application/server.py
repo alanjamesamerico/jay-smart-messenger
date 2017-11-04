@@ -7,13 +7,32 @@ import os
 
 from tornado.ioloop import IOLoop
 
-from application.routes import MainHandler, TelegramBotStart, TelegramBotStop
-from tornado.web import Application
+from tornado.web import Application, RequestHandler
+from application.im.telegram.telegram_message_handler import TelegramMessageHandler
 
 
 URL_PROD = 'https://jay-smart-messenger.herokuapp.com'
 URL_TEST = ''
 PORT = int(os.environ.get("PORT", 8000))
+
+
+telegram_bot = TelegramMessageHandler()
+
+class MainHandler(RequestHandler):
+    def get(self):
+        self.write("Hello, world")
+        
+class TelegramBotStart(RequestHandler):    
+    def get(self):
+        self.write("Start Bot Telegram")
+        print("\n\t[LOG] - TelegramBot Started\n")
+        telegram_bot.start_bot()
+
+class TelegramBotStop(RequestHandler):
+    def get(self):
+        self.write("Serviço do Telegram Bot Parado!")
+        print("\n\t[LOG] - TelegramBot Stopped\n")
+        telegram_bot.stop_bot()
 
 
 '''
