@@ -1,7 +1,9 @@
-from application.server import server_prod, server_local
-from application.im.telegram.telegram_message_handler import TelegramMessageHandler
+from application.server import run_server
 
-#server_prod()
-server_local()
+'''
+Application Start
+'''
+run_server()
+
 #telegram = TelegramMessageHandler()
 #telegram.run_bot()
