@@ -34,7 +34,7 @@ application = Application([
 ])
 
 def server_prod():
-    application.listen(PORT, URL_PROD)
+    application.listen(URL_PROD)
     IOLoop.instance().start()
 
 def server_local():
