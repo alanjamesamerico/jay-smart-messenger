@@ -27,6 +27,10 @@ application = Application([
 ])
 
 
+def ru_server_prod():
+    application.listen(PORT, URL_PROD)
+    IOLoop.instance().start()
+
 def run_server():
     application.listen(port=PORT, address=URL_TEST) #Test Default
     print("\n\t[LOG] - Server Initialized")
