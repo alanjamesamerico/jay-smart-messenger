@@ -1,9 +1,6 @@
-from application.server import run_server
+from application.server import server_local
 
 '''
 Application Start
 '''
-run_server()
-
-#telegram = TelegramMessageHandler()
-#telegram.run_bot()
+server_local()
