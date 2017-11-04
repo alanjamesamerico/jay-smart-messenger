@@ -6,14 +6,9 @@ Created on 2 de nov de 2017
 import os
 
 from tornado.ioloop import IOLoop
-
 from tornado.web import Application, RequestHandler
+
 from application.im.telegram.telegram_message_handler import TelegramMessageHandler
-
-
-URL_PROD = 'https://jay-smart-messenger.herokuapp.com'
-URL_TEST = ''
-PORT = int(os.environ.get("PORT", 8000))
 
 
 telegram_bot = TelegramMessageHandler()
@@ -34,6 +29,10 @@ class TelegramBotStop(RequestHandler):
         print("\n\t[LOG] - TelegramBot Stopped\n")
         telegram_bot.stop_bot()
 
+
+URL_PROD = 'https://jay-smart-messenger.herokuapp.com'
+URL_TEST = ''
+PORT = int(os.environ.get("PORT", 8000))
 
 '''
     CONFIG ROUTES
