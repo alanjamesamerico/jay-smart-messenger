@@ -32,8 +32,8 @@ __number_class__ = 5
 '''
 
 texts = [
-"quero ir pra um lugar onde dê pra praticar algum esporte",
-"gostaria de ir em um lugar histórico",
+"quero andar de bicicleta",
+"sabe o que eu queria? Bom, era poder caminhar em um lugar lindo!",
 "quero visitar o lugar mais antigo de são josé",
 "desejo correr",
 "quero levar meu filho pra sair!"
@@ -66,6 +66,17 @@ def showClassification(classifier):
     print(classifier.getClassification())
     #print(">> Accuracy \t\t- %.4f" %classifier.getAccuracy())
     probLabels = classifier.getProbabilityAllClasses()
+    '''
+    print("Classification: ", nb.getClassification())
+    print("get Classified Class: ", nb.getClassifiedClass())
+    print("Prob Max: ", nb.getProbMaxClassification())
+    print("Prob Min: ", nb.getProbMinClassification())
+    '''
+    
+    '''
+    for i in probLabels:
+        print("class: %s - prob %s" %(i[0], i[1]))
+       ''' 
     for i in range(__number_class__):
         j = 0
         print("%s" %probLabels[i][j+1])
